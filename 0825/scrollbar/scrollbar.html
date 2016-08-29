@@ -1,0 +1,339 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+.wrap-scroll-bar {
+    background: rgba(255,255,255,.9);
+    box-shadow: inset 0px 0px 6px #fff;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    right: 0px;
+    top: 1px;
+    width: 10px;
+}
+
+
+.scroll-bar {
+    background: #f3f2f8;
+    border-radius: 0;
+    height: 0px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 8px;
+    z-index: 2;
+    border: 1px solid #a2a5ac;
+}
+
+.scroll-bar-back {
+    background-color: #a2a5ac;
+    position: absolute;
+    height: 100%;
+    width: 2px;
+    z-index: 1;
+    left: 4px;
+}
+
+#cont {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    width: 360px;
+    height: 120px;
+    border: 1px solid;
+}
+</style>
+</head>
+
+<body>
+<div id="wrap">
+    <div id="cont" customAttr="scroll">www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com wwww.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com wwww.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com www.zjgsq.com
+    </div>
+</div>
+<script src="jquery-1.8.2.min.js"></script>
+<script>
+$(function() {
+ //    var $scroll = $('#cont');
+ //    var $wrap = $('#wrap');
+ //    var $scrollBar = $('.scroll-bar');
+ //    var $wrapScrollBar = $('.wrap-scroll-bar');
+ //    var $ch = document.getElementById("cont").offsetHeight;
+ //    var $wh = document.getElementById("wrap").offsetHeight;
+	// console.log($wh);
+ //    //设置滚动按钮宽度
+ //    $scrollBar.height($wh * $wh / $ch);
+ 
+ //    var $sh = $scrollBar.height();
+ //    var disY = 0;
+ 
+ //    //滚动条拖动事件
+ //    $scrollBar.mousedown(function(event) {
+ //        disX = event.pageY - $(this).position().left;
+ //        if (this.setCapture) {
+ //            $(this).mousemove(function(event) {
+ //                fnChangePos(event.pageY - disY);
+ //            });
+ //            this.setCapture(); //设置捕获范围
+ //            $scrollBar.mouseup(function() {
+ //                $(this).unbind('mousemove mouseup');
+ //                this.releaseCapture(); //取消捕获范围
+ //            });
+ //        } else {
+ //            $(document).mousemove(function(event) {
+ //                fnChangePos(event.pageY - disY);
+ //            });
+ //            $(document).mouseup(function() {
+ //                $(document).unbind('mousemove mouseup');
+ //            });
+ //        }
+ //        return false;
+ //    });
+ //    function fnChangePos(data) {
+ //        if (data < 0) data = 0;
+ //        else if (data > ($wh - $sh)) data = $wh - $sh;
+ //        $scrollBar.css('top', data);
+ //        $scroll.css('top', -($ch - $wh) * data / ($wh - $sh));
+ //    }
+ 
+ //    //鼠标在滚动条上点击或滚动滚轮单次移动的距离
+ //    var sMoveDis = 9;
+ //    //滚动条单击事件注册
+ //    $wrapScrollBar.click(function(event) {
+ //        var relDisY = event.pageY - $(this).offset().top;
+ //        if (relDisY > ($scrollBar.position().top + $sh)) {
+ //            fnChangePos($scrollBar.position().top + sMoveDis)
+ //        } else if (relDisY < $scrollBar.position().top) {
+ //            fnChangePos(($scrollBar.position().top - sMoveDis))
+ //        };
+ //    });
+ //    //阻止事件冒泡
+ //    $scrollBar.click(function(event) {
+ //        event.stopPropagation();
+ //    });
+ 
+ //    //滚动条鼠标滚轮事件注册
+ //    if ($wrap[0].addEventListener) {  //for firefox
+ //        $wrap[0].addEventListener("DOMMouseScroll", fnMouseWheel);
+ //    }
+ //    $wrap[0].onmousewheel = fnMouseWheel; // for other browser
+     
+     
+ //    //鼠标滚轮事件处理函数
+ //    function fnMouseWheel(e) {
+ //        var evt = e || window.event;
+ //        var wheelDelta = evt.wheelDelta || evt.detail; //鼠标滚动值，可由此判断鼠标滚动方向
+ //        if (wheelDelta == -120 || wheelDelta == 3) fnChangePos($scrollBar.position().top + sMoveDis);
+ //        else if (wheelDelta == 120 || wheelDelta == -3) fnChangePos($scrollBar.position().top - sMoveDis);
+ //    }
+
+    /**
+     * wrap为包裹滚动条和内容的外框的className
+     * cont为包裹内容的外框的元素,并需要是绝对定位
+     */
+
+    function customFunc() {
+        var aDom = $("*");
+        var customDoms = [];
+        for (var i = 0, l = aDom.length; i < l; i++) {
+            var dom = aDom.eq(i);
+            if (dom.attr("customAttr")) {
+                customDoms.push(dom);
+            }
+        }
+
+        // 滚动条
+        for (var i = 0, l = customDoms.length; i < l; i++) {
+            (function (i) {
+                var cScroll = customDoms[i];
+                if(cScroll.attr("customAttr") === "scroll"){
+                    customScroll(cScroll);
+                }
+            })(i);
+        }
+    }
+
+    var customScrollFn = {
+        createScroll: function(scroll){
+            var $scroll = scroll;
+            var $parent = $scroll.parent();
+            if($parent.prop("tagName") !== "BODY" && $parent.css("position") === "static"){
+                $parent.css("position", "relative");
+            }
+            var $wrap = $("<div>").appendTo($parent);
+            $wrap.css({
+                "position": $scroll.css("position"),
+                "top": $scroll.position().top,
+                "left": $scroll.position().left,
+                "width": $scroll.outerWidth(),
+                "height": $scroll.outerHeight(),
+                "margin": $scroll.css("margin"),
+                "border": $scroll.css("border")
+            });
+            var $cloneScroll = $scroll.clone();
+            $cloneScroll.css({
+                "position": "absolute",
+                "top": 0,
+                "left": 0,
+                "right": "auto",
+                "bottom": "auto",
+                "margin": 0,
+                "height": "auto",
+                "border": "none"
+            });
+            $cloneScroll.appendTo($wrap);
+            $scroll.remove();
+            return {
+                "wrap": $wrap,
+                "scroll": $cloneScroll
+            };
+        },
+        createScrollDoms: function(wrap){
+            var $wrap = wrap;
+            var $wrapScrollBar = $("<div>", { class: "wrap-scroll-bar"}).appendTo($wrap);
+            var $scrollBar = $("<div>", { class: "scroll-bar"}).appendTo($wrapScrollBar);
+            var $scrollBarBack = $("<div>", { class: "scroll-bar-back"}).appendTo($wrapScrollBar);
+            return {
+                wrapScrollBar: $wrapScrollBar,
+                scrollBar: $scrollBar
+            };
+        }
+
+    };
+
+    function customScroll(scroll) {
+        var $scroll = scroll;
+        var doms = customScrollFn.createScroll($scroll);
+        var $wrap = doms.wrap;
+        $scroll = doms.scroll;
+
+        var scrolls = customScrollFn.createScrollDoms($wrap);
+        var $wrapScrollBar = scrolls.wrapScrollBar;
+        var $scrollBar = scrolls.scrollBar;
+
+        // var conttop = 0;
+        // if ($wrap.find(".wrap-scroll-bar").length > 0 && $wrap.find(".wrap-scroll-bar").css("display") != "none" && resize && resize != "") {
+        //     var _sbar_h = parseFloat(($wrap.height() / $scroll.height()) * $wrap.find(".wrap-scroll-bar").eq(0).height());
+        //     var _sbar_top = parseFloat(($scroll.offset().top / $scroll.height()) * $wrap.find(".wrap-scroll-bar").eq(0).height() * (-1));
+        //     $wrap.find(".scroll-bar").css({
+        //         "height": _sbar_h,
+        //         "top": _sbar_top
+        //     });
+        //     if ($scroll.outerHeight() - 4 <= $wrap.height()) { // 相差4px时忽略滚动
+        //         $wrap.find(".wrap-scroll-bar").css("display", "none");
+        //     }
+        //     return;
+        // } else {
+        //     $scroll.css("top", 0);
+        // }
+        // if (reset && reset != "") {
+        //     $wrap[0].removeEventListener("DOMMouseScroll", fnMouseWheel, false);
+        //     $(".wrap-scroll-bar").remove();
+        // }
+        
+        // if ($wrap.find(".wrap-scroll-bar").length > 0) $wrap.find(".wrap-scroll-bar").remove();
+        // var $wrapScrollBar = $("<div>", { class: "wrap-scroll-bar" }).appendTo($wrap);
+        // var $scrollBar = $("<div>", { class: "scroll-bar" }).appendTo($wrapScrollBar);
+        // var $scrollBarBack = $("<div>", { class: "scroll-bar-back" }).appendTo($wrapScrollBar);
+        var $ch = $scroll.outerHeight();
+        var $wh = $wrap.outerHeight();
+        //$wrap[0].removeEventListener("DOMMouseScroll", fnMouseWheel, false);
+        // if ($scroll.outerHeight() - 4 <= $wrap.height()) { // 相差4px时忽略滚动
+        //     $wrapScrollBar.css("display", "none");
+        //     return;
+        // }
+        $wrapScrollBar.css("display", "block");
+        $wrap.css("overflow", "hidden");
+
+        //设置滚动按钮高度
+        $scrollBar.height(($wh * $wh / $ch));
+
+        var $sh = $scrollBar.height();
+        var disY = 0;
+        // if (resize) {
+        //     $scroll.css("top", conttop + "px");
+        //     $(".scroll-bar").css("top", $(".wrap-scroll-bar").height() * conttop / $ch * (-1) + "px");
+        //     conttop = 0;
+        // }
+
+        //滚动条拖动事件
+        $scrollBar.mousedown(function(event){
+            var bbDisY = 0;
+            var sbDisY = event.pageY - $scrollBar.offset().top;  // 点击位置跟滚动条顶端的位置
+            var wsbDisY = $wrapScrollBar.offset().top;
+            disX = event.pageY - $(this).position().left;
+            if (this.setCapture) {
+                $(this).mousemove(function(event){
+                    fnChangePos(event.pageY - disY - wsbDisY - sbDisY);
+                });
+                this.setCapture(); //设置捕获范围
+                $scrollBar.mouseup(function(){
+                    $(this).unbind('mousemove mouseup');
+                    this.releaseCapture(); //取消捕获范围
+                });
+            } else {
+                $(document).mousemove(function(event){
+                    fnChangePos(event.pageY - disY - wsbDisY - sbDisY);
+                });
+                $(document).mouseup(function(){
+                    $(document).unbind('mousemove mouseup');
+                });
+            }
+            return false;
+        });
+        function fnChangePos(data) {
+            if (data < 0) data = 0;
+            else if (data > ($wh - $sh)) data = $wh - $sh;
+            $scrollBar.css('top', data);
+            $scroll.css('top', -($ch - $wh) * data / ($wh - $sh));
+
+            // if (fn && fn != "") fn();
+        }
+
+        // 鼠标在滚动条上点击或滚动滚轮单次移动的距离
+        var sMoveDis = 18;
+        // 滚动条单击事件注册
+        $wrapScrollBar.click(function(event){
+            var relDisY = event.pageY - $(this).offset().top;
+            if (relDisY > ($scrollBar.position().top + $sh)) {
+                fnChangePos($scrollBar.position().top + sMoveDis)
+            } else if (relDisY < $scrollBar.position().top) {
+                fnChangePos(($scrollBar.position().top - sMoveDis))
+            };
+        });
+        // 阻止事件冒泡
+        $scrollBar.click(function(event){
+            event.stopPropagation();
+        });
+
+        // 滚动条鼠标滚轮事件注册
+        $wrap[0].removeEventListener("DOMMouseScroll", fnMouseWheel, false);
+        if ($wrap[0].addEventListener) {      //for firefox
+            $wrap[0].addEventListener("DOMMouseScroll", fnMouseWheel, false);
+        }
+        $wrap[0].onmousewheel = fnMouseWheel; // for other browser
+
+
+        // 鼠标滚轮事件处理函数
+        function fnMouseWheel(e){
+            var evt = e || window.event;
+            var wheelDelta = evt.wheelDelta || evt.detail; //鼠标滚动值，可由此判断鼠标滚动方向
+            if(wheelDelta == -120 || wheelDelta == 3){
+                fnChangePos($scrollBar.position().top + sMoveDis);
+            } else if(wheelDelta == 120 || wheelDelta == -3){ 
+                fnChangePos($scrollBar.position().top - sMoveDis);
+            }
+        }
+
+        // 滚动块显示处理
+        // if($sh >= 13){
+        //     $scrollBar.height($sh - 3);
+        // }
+    }
+    customFunc();
+});
+</script>
+</body>
+</html>
