@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <title>无标题文档</title>
 <style>
+*{margin:0;padding:0;}
+
 .wrap-scroll-bar {
     background: rgba(255,255,255,.9);
     box-shadow: inset 0px 0px 6px #fff;
@@ -11,7 +13,7 @@
     overflow: hidden;
     position: absolute;
     right: 0px;
-    top: 1px;
+    top: 0px;
     width: 10px;
 }
 
@@ -288,8 +290,6 @@ $(function() {
             else if (data > ($wh - $sh)) data = $wh - $sh;
             $scrollBar.css('top', data);
             $scroll.css('top', -($ch - $wh) * data / ($wh - $sh));
-
-            // if (fn && fn != "") fn();
         }
 
         // 鼠标在滚动条上点击或滚动滚轮单次移动的距离
@@ -328,11 +328,13 @@ $(function() {
         }
 
         // 滚动块显示处理
-        // if($sh >= 13){
-        //     $scrollBar.height($sh - 3);
-        // }
+        if($sh >= 13){
+            $scrollBar.height($sh - 2);
+        }
     }
-    customFunc();
+    setTimeout(function(){
+        customFunc();
+    }, 0);
 });
 </script>
 </body>

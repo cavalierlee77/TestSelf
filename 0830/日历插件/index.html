@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>显示日历「jCal」</title>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="css.css" media="all" />
+		<link rel="stylesheet" type="text/css" href="jquery.jCal.css" media="all" />
+		<script type="text/javascript" charset="utf-8" src="http://www.ijquery.cn/js/jquery-1.4.2.min.js"></script>
+		<script type="text/javascript" charset="utf-8" src="http://www.ijquery.cn/js/jquery.animate.clip.js"></script>
+		<script type="text/javascript" charset="utf-8" src="jquery.jCal.js"></script>
+	
+		<script>
+			$(function () {
+				$('#calendar').jCal({
+					day: new Date(),
+					days: 1,
+					showMonths: 1,
+					monthSelect: false, 
+					dow: ['日', '一', '二', '三', '四', '五', '六'],
+					ml: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+					dCheck: function (day) {
+						 
+					}
+            		// dayOffset: 0,
+            		// forceWeek: false,
+            		// dow: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+            		// ml: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+            		// ms: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+				});
+
+			});
+			
+		</script>
+	</head>
+	
+	<body>
+	
+
+		<div class="container">
+			<div id="container">
+			
+				<!--显示日历-->
+				<div id="calendar"></div>
+				<!--显示选择日历的结果-->
+				<div id="result"></div>
+				
+			</div>
+		</div>
+		
+		<div id="footer"></div>
+		
+	</body>
+	<script type="text/javascript" src="http://tajs.qq.com/stats?sId=19799522" charset="UTF-8"></script>
+</html>
